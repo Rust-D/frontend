@@ -2,7 +2,11 @@ import React, { useState } from 'react'
 
 const LoadingPage = () => {
   return (
-    <div className='overlay'>LoadingPage</div>
+    <div id='overlay'>
+        <div className='text'>
+            overlay
+        </div>
+    </div>
   )
 }
 
