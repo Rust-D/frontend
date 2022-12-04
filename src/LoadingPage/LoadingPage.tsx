@@ -3,8 +3,11 @@ import React, { useState } from 'react'
 const LoadingPage = () => {
   return (
     <div id='overlay'>
+      <div className="loading">
+        <span className="circle"></span>
+      </div>
         <div className='text'>
-            overlay
+            overlaydesu
         </div>
     </div>
   )
