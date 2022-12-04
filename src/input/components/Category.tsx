@@ -1,4 +1,4 @@
-// profile [sex, rerationship, age]のcheckbox
+// profile [sex, relationship, age]のcheckbox
 
 import React from "react"
 
@@ -9,8 +9,8 @@ type CategoryProps = {
 }
 
 let fashion = 0
-let daily= 0
-let food= 0
+let daily = 0
+let food = 0
 let sports = 0
 let entertainment = 0
 let count = 0
