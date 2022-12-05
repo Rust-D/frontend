@@ -5,7 +5,7 @@ import Profile from './components/Profile'
 import { Scrollbars } from 'rc-scrollbars'
 import '../App.css'
 
-export default function App(){
+export default function App(){  
     const style = {
         width:"100%",
         margin: "9 auto",
@@ -36,23 +36,23 @@ export default function App(){
                     </div>
                     <div className = 'Profile'>
                         <div className='Sex'> 
-                            <Profile name = "sex" click = {sex} setClick={setSex} time = {0} count = {3}/> 女性
-                            <Profile name = "sex" click = {sex} setClick={setSex} time = {1} count = {3}/> 男性
-                            <Profile name = "sex" click = {sex} setClick={setSex} time = {2} count = {3}/> その他
+                            <Profile name = "sex" click = {sex} setClick={setSex} time = {0}/> 女性
+                            <Profile name = "sex" click = {sex} setClick={setSex} time = {1}/> 男性
+                            <Profile name = "sex" click = {sex} setClick={setSex} time = {2}/> その他
                         </div>
                         <div className='Relationship'>
-                            <Profile name = "rel" click = {rel} setClick={setRel} time = {0} count = {4}/> 家族
-                            <Profile name = "rel" click = {rel} setClick={setRel} time = {1} count = {4}/> 友達
-                            <Profile name = "rel" click = {rel} setClick={setRel} time = {2} count = {4}/> 恋人
-                            <Profile name = "rel" click = {rel} setClick={setRel} time = {3} count = {4}/> その他
+                            <Profile name = "rel" click = {rel} setClick={setRel} time = {0}/> 家族
+                            <Profile name = "rel" click = {rel} setClick={setRel} time = {1}/> 友達
+                            <Profile name = "rel" click = {rel} setClick={setRel} time = {2}/> 恋人
+                            <Profile name = "rel" click = {rel} setClick={setRel} time = {3}/> その他
                         </div>
                         <div className='Age'>
-                            <Profile name = "age" click = {age} setClick={setAge} time = {0} count = {6}/> 10代
-                            <Profile name = "age" click = {age} setClick={setAge} time = {1} count = {6}/> 20代
-                            <Profile name = "age" click = {age} setClick={setAge} time = {2} count = {6}/> 30代
-                            <Profile name = "age" click = {age} setClick={setAge} time = {3} count = {6}/> 40代
-                            <Profile name = "age" click = {age} setClick={setAge} time = {4} count = {6}/> 50代
-                            <Profile name = "age" click = {age} setClick={setAge} time = {5} count = {6}/> 60代
+                            <Profile name = "age" click = {age} setClick={setAge} time = {0}/> 10代
+                            <Profile name = "age" click = {age} setClick={setAge} time = {1}/> 20代
+                            <Profile name = "age" click = {age} setClick={setAge} time = {2}/> 30代
+                            <Profile name = "age" click = {age} setClick={setAge} time = {3}/> 40代
+                            <Profile name = "age" click = {age} setClick={setAge} time = {4}/> 50代
+                            <Profile name = "age" click = {age} setClick={setAge} time = {5}/> 60代
                         </div>
                     </div>
                     <div className='Category'>

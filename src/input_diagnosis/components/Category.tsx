@@ -8,12 +8,12 @@ type CategoryProps = {
     time: number
 }
 
-let fashion = 0
-let daily = 0
-let food = 0
-let sports = 0
-let entertainment = 0
-let count = 0
+let fashion        = 0
+let daily          = 0
+let food           = 0
+let sports         = 0
+let entertainment  = 0
+let count          = 0
 
 export default function Category(props : CategoryProps){
     function setValue(event: React.ChangeEvent<HTMLInputElement>){

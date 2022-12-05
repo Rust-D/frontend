@@ -5,18 +5,16 @@ type ProfileProps = {
     setClick: Function
     time: number
     name: string
-    count : number
 }
 let tempClick : Array<number> // useStateいじる用
 
 export default function Profile(props : ProfileProps){
 
-    //props.Clickの今押されたモノ以外を0にする関数
+    //props.Clickの今押されたモノ以外を0にする
     function setValue(event: React.ChangeEvent<HTMLInputElement>){
         tempClick = props.click
         tempClick[props.time] = 1
-        // チェックボックスの数が3, 4, 6の時の処理
-        if (props.count === 3){
+        if (props.click.length === 3){
             switch (props.time){
                 case 0:
                     tempClick[1] = 0
@@ -38,7 +36,7 @@ export default function Profile(props : ProfileProps){
                     break;
             }
         }
-        else if (props.count === 4){
+        else if (props.click.length === 4){
             switch (props.time){
                 case 0:
                     tempClick[1] = 0
@@ -70,7 +68,7 @@ export default function Profile(props : ProfileProps){
                     break;
             }
         }
-        else if (props.count === 6){
+        else if (props.click.length === 6){
             switch (props.time){
                 case 0:
                     tempClick[1] = 0
