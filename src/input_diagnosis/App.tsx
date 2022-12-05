@@ -15,7 +15,6 @@ export default function App(){
     const [max, setMax] = useState(0)
     const [click, setClick] = useState(Array(5).fill(0))
     const [sex, setSex] = useState(Array(3).fill(0))
-    const [rel, setRel] = useState(Array(4).fill(0))
     const [age, setAge] = useState(Array(6).fill(0))
 
 
@@ -29,7 +28,7 @@ export default function App(){
                 <h4>プレゼントを提案する</h4>
                 <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={600}>
                     <div className = 'Price'>
-                        <>下限</><>上限</><br/>
+                        <>下限上限</><br/>
                         <Price price = {min} setPrice = {setMin}/>
                         <Price price = {max} setPrice = {setMax}/>
                     </div>

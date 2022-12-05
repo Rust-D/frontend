@@ -3,6 +3,7 @@ import Category from './components/Category'
 import Price from './components/Price'
 import Profile from './components/Profile'
 import { Scrollbars } from 'rc-scrollbars'
+import '../App.css'
 
 export default function App(){
     const style = {
@@ -27,7 +28,7 @@ export default function App(){
         <div style={style}>
             <div>
                 <h4>プレゼントを提案する</h4>
-                <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={600}>
+                <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={800}>
                     <div className = 'Price'>
                         <>下限</><>上限</><br/>
                         <Price price = {min} setPrice = {setMin}/>
