@@ -39,12 +39,6 @@ export default function App(){
                             <Profile name = "sex" click = {sex} setClick={setSex} time = {1} count = {3}/> 男性
                             <Profile name = "sex" click = {sex} setClick={setSex} time = {2} count = {3}/> その他
                         </div>
-                        <div className='Relationship'>
-                            <Profile name = "rel" click = {rel} setClick={setRel} time = {0} count = {4}/> 家族
-                            <Profile name = "rel" click = {rel} setClick={setRel} time = {1} count = {4}/> 友達
-                            <Profile name = "rel" click = {rel} setClick={setRel} time = {2} count = {4}/> 恋人
-                            <Profile name = "rel" click = {rel} setClick={setRel} time = {3} count = {4}/> その他
-                        </div>
                         <div className='Age'>
                             <Profile name = "age" click = {age} setClick={setAge} time = {0} count = {6}/> 10代
                             <Profile name = "age" click = {age} setClick={setAge} time = {1} count = {6}/> 20代
