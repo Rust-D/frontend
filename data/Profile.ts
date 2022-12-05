@@ -39,3 +39,5 @@ export class Profile {
         this.age = age;
     }
 }
+
+const profile = new Profile(Sex.MALE, Relationship.FAMILY, Age.AROUND_30)

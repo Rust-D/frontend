@@ -4,16 +4,11 @@ type PriceProps = {
 }
 
 export default function Price(props: PriceProps){
+    const HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => props.setPrice(e.target.value)
 
-    const handleForm = (event: React.ChangeEvent<HTMLInputElement>) =>{
-        props.setPrice(event.target.value)
-        console.log(props.price)
-    }
     return (
-        <input
-            onChange={(event) => handleForm(event)}
-            type={""}
+        <input onChange={(e) => HandleChange(e)}
+        type={""}
         />
-        
     )
 }

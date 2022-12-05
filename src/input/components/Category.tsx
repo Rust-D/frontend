@@ -1,59 +1,32 @@
-// profile [sex, relationship, age]のcheckbox
+type RelationshipProps = {
+    val : Array<string>
+    setVal : Function
+    value : string //押したときにstateに入れたい名前
 
-import React from "react"
-
-type CategoryProps = {
-    click: Array<number>
-    setClick: Function
-    time: number
 }
+export default function Relationship(props: RelationshipProps){
 
-let fashion = 0
-let daily = 0
-let food = 0
-let sports = 0
-let entertainment = 0
-let count = 0
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+        // 押されたとき、ONなのかOFFなのかを判定する
 
-export default function Category(props : CategoryProps){
-    function setValue(event: React.ChangeEvent<HTMLInputElement>){
-        if (props.time === 0){
-            fashion += 1
-            count = fashion
+        if (props.val.includes(e.target.value)){
+            // stateの配列の中にvalueのやつが既にあったらOFF
+            // 今押されたやつ以外をset
+            props.setVal(props.val.filter(item => item !== e.target.value))
         }
-        else if (props.time === 1){
-            daily += 1
-            count = daily
+        else {
+            // 今のstateの末尾に今押されたやつを追加
+            props.setVal([...props.val, e.target.value])
         }
-        else if (props.time === 2){
-            food += 1
-            count = food
-        }
-        else if (props.time === 3){
-            sports += 1
-            count = sports
-        }
-        else{
-            entertainment += 1
-            count = entertainment
-        }
-        let tempClick = props.click;
-            if (count % 2){
-                tempClick[props.time] = 1;
-                props.setClick(tempClick)
-                console.log(props.click)
-            }
-            else {
-                tempClick[props.time] = 0;
-                props.setClick(tempClick)
-                console.log(props.click)
-            }
-        }
+    }
+
     return (
         <input 
-            onChange = {(event) => setValue(event)}
-            type = "checkbox"
-            value = {props.click[props.time]}
+        type="checkbox" 
+        value={props.value} 
+        onChange={(e) => handleChange(e)}
         />
-    )
+    );
+    
+
 }

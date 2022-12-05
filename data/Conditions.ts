@@ -13,13 +13,13 @@ export type GiftCategory = typeof GiftCategory[keyof typeof GiftCategory]
 export class Condition {
     minPrice: number;
     maxPrice: number;
-    prifele: Profile;
-    giftCategory: GiftCategory;
+    profile: Profile;
+    giftCategory: Array<GiftCategory>;
 
-    constructor(minPrice: number, maxPrice: number, profile: Profile, giftCategory: GiftCategory) {
+    constructor(minPrice: number, maxPrice: number, profile: Profile, giftCategory: Array<GiftCategory>) {
         this.minPrice = minPrice;
         this.maxPrice = maxPrice;
-        this.prifele = profile;
+        this.profile = profile;
         this.giftCategory = giftCategory;
     }
 }
