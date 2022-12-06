@@ -5,7 +5,7 @@ import Profile from './components/Profile'
 import { Scrollbars } from 'rc-scrollbars'
 import '../App.css'
 
-export default function App(){  
+export default function presentInput(){  
     const style = {
         width:"100%",
         margin: "9 auto",
@@ -22,7 +22,7 @@ export default function App(){
     return(
         <div style={style}>
             <div>
-                <h4>プレゼントを提案する</h4>
+                <h2>プレゼントを提案する</h2>
                 <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={800}>
                     <div className = 'Price'>
                         <p>価格</p>

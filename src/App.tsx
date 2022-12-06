@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import PuresentInput from './input/App';
+import presentInput from './input/App';
+import questionnaireInput from './input_diagnosis/App'
 
 export default function App(){
     return(
@@ -8,9 +9,9 @@ export default function App(){
             <BrowserRouter>
                 <Switch>
                     <Route exact path='/' /*component={}*/ />
-                    <Route path='/presents/input' component={PuresentInput} />
+                    <Route path='/presents/input' component={presentInput} />
                     <Route path='/presents/result' /*component={presentsResult}*/ />
-                    <Route path='/questionnaire/input' /*component={questionnaireInput}*/ />
+                    <Route path='/questionnaire/input' component={questionnaireInput}/>
                     <Route path='/questionnaire/result' /*component={questionnaireResult}*/ />
                 </Switch>
             </BrowserRouter>
