@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
+import './LoadingPage.css'
 
-const LoadingPage = () => {
+export default function LoadingPage (){
   return (
     <div id='overlay'>
       <div className="loading">
         <span className="circle"></span>
       </div>
         <div className='text'>
-            overlaydesu
+            提案中
         </div>
     </div>
   )
 }
-
-export default LoadingPage
