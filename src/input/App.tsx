@@ -5,7 +5,7 @@ import Profile from './components/Profile'
 import { Scrollbars } from 'rc-scrollbars'
 import '../App.css'
 
-export default function presentInput(){  
+export default function PresentInput(){  
     const style = {
         width:"100%",
         margin: "9 auto",
