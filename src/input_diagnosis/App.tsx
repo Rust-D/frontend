@@ -30,7 +30,7 @@ export default function QuestionnaireInput(){
                         <Price price = {max} setPrice = {setMax}/>
                     </div>
                     <div className = 'Profile'>
-                        <h3>送る相手のプロフィール</h3>
+                        <h3>プロフィール</h3>
                         <div className='Sex'> 
                             <p>性別</p>
                             <Profile name = "sex" value="male" val = {sex} setVal={setSex}/>男性 

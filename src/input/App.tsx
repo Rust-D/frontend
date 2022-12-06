@@ -26,7 +26,10 @@ export default function PresentInput(){
                 <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={800}>
                     <div className = 'Price'>
                         <p>価格</p>
-                        <>下限</><>上限</><br/>
+                        <ul>
+                        <li>下限</li><li>上限</li>
+                        </ul>
+                        <br/>
                         <Price price = {min} setPrice = {setMin}/>
                         <Price price = {max} setPrice = {setMax}/>
                     </div>
