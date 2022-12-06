@@ -25,7 +25,7 @@ export default function PresentInput(){
                 <h2>プレゼントを提案する</h2>
                 <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={800}>
                     <div className = 'Price'>
-                        <p>価格</p>
+                        <h3>価格</h3>
                         <ul>
                         <li>下限</li><li>上限</li>
                         </ul>
@@ -36,20 +36,28 @@ export default function PresentInput(){
                     <div className = 'Profile'>
                         <h3>送る相手のプロフィール</h3>
                         <div className='Sex'> 
-                            <p>性別</p>
-                            <Profile name = "sex" value="male" val = {sex} setVal={setSex}/>男性 
-                            <Profile name = "sex" value="female" val = {sex} setVal={setSex}/> 女性
-                            <Profile name = "sex" value="other" val = {sex} setVal={setSex}/> その他
+                            <h4>性別</h4>
+                            <ul>
+                            <li>男性</li> <li>女性</li> <li>その他</li>
+                            </ul>
+                            <br/>
+                            <Profile name = "sex" value="male" val = {sex} setVal={setSex}/>
+                            <Profile name = "sex" value="female" val = {sex} setVal={setSex}/> 
+                            <Profile name = "sex" value="other" val = {sex} setVal={setSex}/>
                         </div>
                         <div className='Relationship'>
-                            <p>関係性</p>
-                            <Profile name = "rel" value="family" val = {rel} setVal={setRel}/> 家族
-                            <Profile name = "rel" value="friend" val = {rel} setVal={setRel}/> 友達
-                            <Profile name = "rel" value="lover" val = {rel} setVal={setRel}/> 恋人
-                            <Profile name = "rel" value="other" val = {rel} setVal={setRel}/> その他
+                            <h4>関係性</h4>
+                            <ul>
+                            <li>家族</li> <li>友達</li> <li>恋人</li> <li>その他</li>
+                            </ul>
+                            <br/>
+                            <Profile name = "rel" value="family" val = {rel} setVal={setRel}/> 
+                            <Profile name = "rel" value="friend" val = {rel} setVal={setRel}/> 
+                            <Profile name = "rel" value="lover" val = {rel} setVal={setRel}/> 
+                            <Profile name = "rel" value="other" val = {rel} setVal={setRel}/> 
                         </div>
                         <div className='Age'>
-                            <p>年齢</p>
+                            <h4>年齢</h4>
                             <Profile name = "age" value="around_10" val = {age} setVal={setAge}/> 10代
                             <Profile name = "age" value="around_20" val = {age} setVal={setAge}/> 20代
                             <Profile name = "age" value="around_30" val = {age} setVal={setAge}/> 30代
@@ -59,7 +67,7 @@ export default function PresentInput(){
                         </div>
                     </div>
                     <div className='Category'>
-                        <p>贈り物のカテゴリー</p>
+                        <h3>贈り物のカテゴリー</h3>
                             <Category value="Fashion"val = {cate} setVal={setCate}/> ファッション
                             <Category value="DailyNecessities"val = {cate} setVal={setCate}/> 日用品
                             <Category value="Food"val = {cate} setVal={setCate}/> 食べ物

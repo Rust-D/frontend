@@ -1,13 +1,37 @@
 @charset "utf-8";
 
-h4 {
+h2 {
     font-size: 36px;
     text-align: center;
 }
 
-.Price {
+h3 {
     background-color: rgb(168, 168, 168);
-    padding: 10px;
+    text-align: left;    
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 20;
+    text-align: left;
+}
+
+.Price {
+    background-color: rgb(228, 228, 228);
     text-align: center;
+    margin: 2em;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin: 3em;
+}
+
+.Sex {
+    background-color: rgb(228, 228, 228);
+    text-align: center;
+    margin: 2em;
 }
 
