@@ -5,9 +5,9 @@ import ProfileInput from './components/Profile'
 import { Scrollbars } from 'rc-scrollbars'
 import { Condition, GiftCategory} from '../data/Conditions'
 import { Profile, Sex, Relationship, Age } from '../data/Profile'
-// import OutputModal from './components/modal'
 import Modal from 'react-modal'
 import '../App.css'
+import { useHistory } from 'react-router-dom'
 
 Modal.setAppElement("#root");
 
@@ -25,6 +25,10 @@ export default function PresentInput(){
     const [age, setAge] = useState<Age>(Age.AROUND_10)
     const [cate, setCate] = useState<Array<GiftCategory>>(Array)
     const [modal, setModal] = useState(false)
+    // const [conditions, setConditions] = useState({})
+    // const [profile, setProfile] = useState({sex: Sex, relationship: Relationship, age: Age})
+    
+    const history = useHistory()
 
     function inputCondition(){
         console.log(min)
@@ -33,12 +37,20 @@ export default function PresentInput(){
         console.log(rel)
         console.log(age)
         console.log(cate)
-        const profile = new Profile(sex, rel, age)
-        const conditions = new Condition(min, max, profile, cate)
+
+        const Uprofile = new Profile(sex, rel, age)
+        console.log(Uprofile)
+        // setProfile({sex : sex, relationship: {rel}, age: {age}})
+        // console.log(profile)
+        const Uconditions = new Condition(min, max, Uprofile, cate)
+        console.log(Uconditions)
+
+        // history.push("result", {minPrice : min, maxPrice: max, profile: Uprofile, category: cate})result
+        history.push("result" ,{condition: Uconditions})
     }
 
     return(
-        // <div style={style}>
+        <div style={style}>
             <div>
                 <h2>プレゼントを提案する</h2>
                 <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={800}>
@@ -128,10 +140,10 @@ export default function PresentInput(){
                 <br/>
                 <button type="button" onClick={() => (min === -1 || max === -1 || cate.length === 0) ? setModal(true) : inputCondition()}>提案</button>
                 <Modal isOpen={modal}>
-                    <button onClick={() => setModal(false)}>Close</button>
+                    <button onClick={() => setModal(false)}></button>
                     <h1>入力漏れがあります！</h1>
                 </Modal>
             </div>
-        // </div>    
+        </div>    
     );
     }
