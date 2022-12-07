@@ -1,83 +1,137 @@
 import React, { useState } from 'react'
 import Category from './components/Category'
 import Price from './components/Price'
-import Profile from './components/Profile'
+import ProfileInput from './components/Profile'
 import { Scrollbars } from 'rc-scrollbars'
+import { Condition, GiftCategory} from '../data/Conditions'
+import { Profile, Sex, Relationship, Age } from '../data/Profile'
+// import OutputModal from './components/modal'
+import Modal from 'react-modal'
 import '../App.css'
 
-export default function PresentInput(){  
+Modal.setAppElement("#root");
+
+export default function PresentInput(){
     const style = {
         width:"100%",
         margin: "9 auto",
         marginTop: 0,
     };
 
-    const [min, setMin] = useState(0)
-    const [max, setMax] = useState(0)
-    const [sex, setSex] = useState("")
-    const [rel, setRel] = useState("")
-    const [age, setAge] = useState("")
-    const [cate, setCate] = useState(Array(5))
+    const [min, setMin] = useState<number>(-1)
+    const [max, setMax] = useState<number>(-1)
+    const [sex, setSex] = useState<Sex>(Sex.MALE)
+    const [rel, setRel] = useState<Relationship>(Relationship.FAMILY)
+    const [age, setAge] = useState<Age>(Age.AROUND_10)
+    const [cate, setCate] = useState<Array<GiftCategory>>(Array)
+    const [modal, setModal] = useState(false)
+
+    function inputCondition(){
+        console.log(min)
+        console.log(max)
+        console.log(sex)
+        console.log(rel)
+        console.log(age)
+        console.log(cate)
+        const profile = new Profile(sex, rel, age)
+        const conditions = new Condition(min, max, profile, cate)
+    }
 
     return(
-        <div style={style}>
+        // <div style={style}>
             <div>
                 <h2>プレゼントを提案する</h2>
                 <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={800}>
+
                     <div className = 'Price'>
                         <h3>価格</h3>
-                        <ul>
-                        <li>下限</li><li>上限</li>
+                        <ul className='Price_cont'>
+                            <li className='Price_cont-inner'>下限</li>
+                            <li className='Price_cont-inner'>上限</li>
+                        </ul>
+                        <ul className='Price_input'>
+                            <li className='Price_input-inner'><Price price = {min} setPrice = {setMin}/></li>
+                            <li className='Price_input-inner'><Price price = {max} setPrice = {setMax}/></li>
                         </ul>
                         <br/>
-                        <Price price = {min} setPrice = {setMin}/>
-                        <Price price = {max} setPrice = {setMax}/>
                     </div>
+
                     <div className = 'Profile'>
-                        <h3>送る相手のプロフィール</h3>
                         <div className='Sex'> 
+                        <h3>送る相手のプロフィール</h3>
                             <h4>性別</h4>
                             <ul>
-                            <li>男性</li> <li>女性</li> <li>その他</li>
+                                <li>男性</li>
+                                <li>女性</li>
+                                <li>その他</li>
                             </ul>
-                            <br/>
-                            <Profile name = "sex" value="male" val = {sex} setVal={setSex}/>
-                            <Profile name = "sex" value="female" val = {sex} setVal={setSex}/> 
-                            <Profile name = "sex" value="other" val = {sex} setVal={setSex}/>
+                            <ul className='Sex_input'>
+                                <li className='Sex_input-inner'><ProfileInput name = "sex" value={Sex.MALE} val = {sex} setVal={setSex} checked={true}/></li>
+                                <li className='Sex_input-inner'><ProfileInput name = "sex" value={Sex.FEMALE} val = {sex} setVal={setSex}/></li>
+                                <li className='Sex_input-inner'><ProfileInput name = "sex" value={Sex.OTHER} val = {sex} setVal={setSex}/></li>
+                            </ul>
                         </div>
                         <div className='Relationship'>
                             <h4>関係性</h4>
                             <ul>
-                            <li>家族</li> <li>友達</li> <li>恋人</li> <li>その他</li>
+                                <li>家族</li>
+                                <li>友達</li>
+                                <li>恋人</li>
+                                <li>その他</li>
                             </ul>
-                            <br/>
-                            <Profile name = "rel" value="family" val = {rel} setVal={setRel}/> 
-                            <Profile name = "rel" value="friend" val = {rel} setVal={setRel}/> 
-                            <Profile name = "rel" value="lover" val = {rel} setVal={setRel}/> 
-                            <Profile name = "rel" value="other" val = {rel} setVal={setRel}/> 
+                            <ul className='Rel_input'>
+                                <li className='Rel_input-inner'><ProfileInput name = "rel" value={Relationship.FAMILY} val = {rel} setVal={setRel} checked ={true}/></li>
+                                <li className='Rel_input-inner'><ProfileInput name = "rel" value={Relationship.FRIEND} val = {rel} setVal={setRel}/></li>
+                                <li className='Rel_input-inner'><ProfileInput name = "rel" value={Relationship.LOVER} val = {rel} setVal={setRel}/></li>
+                                <li className='Rel_input-inner'><ProfileInput name = "rel" value={Relationship.OTHER} val = {rel} setVal={setRel}/></li>
+                            </ul>
                         </div>
                         <div className='Age'>
                             <h4>年齢</h4>
-                            <Profile name = "age" value="around_10" val = {age} setVal={setAge}/> 10代
-                            <Profile name = "age" value="around_20" val = {age} setVal={setAge}/> 20代
-                            <Profile name = "age" value="around_30" val = {age} setVal={setAge}/> 30代
-                            <Profile name = "age" value="around_40" val = {age} setVal={setAge}/> 40代
-                            <Profile name = "age" value="around_50" val = {age} setVal={setAge}/> 50代
-                            <Profile name = "age" value="around_60" val = {age} setVal={setAge}/> 60代
+                            <ul>
+                                <li>10代</li>
+                                <li>20代</li>
+                                <li>30代</li>
+                                <li>40代</li>
+                                <li>50代</li>
+                                <li>60代</li>
+                            </ul>
+                            <ul className='Age_input'>
+                                <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_10} val = {age} setVal={setAge} checked={true}/></li>
+                                <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_20} val = {age} setVal={setAge}/></li>
+                                <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_30} val = {age} setVal={setAge}/></li>
+                                <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_40} val = {age} setVal={setAge}/></li>
+                                <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_50} val = {age} setVal={setAge}/></li>
+                                <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_60} val = {age} setVal={setAge}/></li>
+                            </ul>
                         </div>
                     </div>
                     <div className='Category'>
                         <h3>贈り物のカテゴリー</h3>
-                            <Category value="Fashion"val = {cate} setVal={setCate}/> ファッション
-                            <Category value="DailyNecessities"val = {cate} setVal={setCate}/> 日用品
-                            <Category value="Food"val = {cate} setVal={setCate}/> 食べ物
-                            <Category value="Sports"val = {cate} setVal={setCate}/> スポーツ・アウトドア
-                            <Category value="Entartainment"val = {cate} setVal={setCate}/> エンタメ
+                        <ul>
+                            <li>ファッション</li>
+                            <li>日用品</li>
+                            <li>食べ物</li>
+                            <li>スポーツ</li><br/>
+                            <li>アウトドア</li>
+                            <li>エンタメ</li>
+                        </ul>
+                        <ul className='Cat_input'>
+                            <li className='Cat-_input-inner'><Category value={GiftCategory.FASHION} val = {cate} setVal={setCate}/></li>
+                            <li className='Cat-_input-inner'><Category value={GiftCategory.DAILY_NECESSITIES} val = {cate} setVal={setCate}/></li>
+                            <li className='Cat-_input-inner'><Category value={GiftCategory.FOOD} val = {cate} setVal={setCate}/> </li>
+                            <li className='Cat-_input-inner'><Category value={GiftCategory.SPORTS} val = {cate} setVal={setCate}/></li>
+                            <li className='Cat-_input-inner'><Category value={GiftCategory.ENTERTAINMENT} val = {cate} setVal={setCate}/></li>
+                        </ul>
                     </div>
                 </Scrollbars>
                 <br/>
-                <button type="button">提案</button>
+                <button type="button" onClick={() => (min === -1 || max === -1 || cate.length === 0) ? setModal(true) : inputCondition()}>提案</button>
+                <Modal isOpen={modal}>
+                    <button onClick={() => setModal(false)}>Close</button>
+                    <h1>入力漏れがあります！</h1>
+                </Modal>
             </div>
-        </div>    
+        // </div>    
     );
-}
+    }

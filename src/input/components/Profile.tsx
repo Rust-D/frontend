@@ -3,6 +3,7 @@ type ProfileProps = {
     value: string // 押したときにstateに入れたい名前
     val: string
     setVal: Function
+    checked?:boolean
 }
 
 export default function Profile(props: ProfileProps){
@@ -12,6 +13,7 @@ export default function Profile(props: ProfileProps){
         type="radio"
         name={props.name}
         value={props.value}
+        checked={props.checked}
         onChange = {(e) => handleChange(e)}
         />
     )
