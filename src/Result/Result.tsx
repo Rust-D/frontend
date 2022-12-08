@@ -3,8 +3,13 @@ import { GiftRepository } from '../data/GiftRepository'
 
 function Result() {
 
+  /* ここにコンディションのインスタンスを書く */
+  
+
     const GiftRepo = new GiftRepository
-    const [Gifts, SetGifts] = useState(GiftRepo.getRecommendedGiftList(/*nanikakaku*/))
+    const [Gifts, SetGifts] = useState(GiftRepo.getRecommendedGiftList())
+
+    
 
     
   
