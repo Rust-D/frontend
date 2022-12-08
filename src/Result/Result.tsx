@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { GiftRepository } from '../data/GiftRepository'
+import Items from './components/Items'
 
 function Result() {
 
@@ -7,14 +8,16 @@ function Result() {
   
 
     const GiftRepo = new GiftRepository
-    const [Gifts, SetGifts] = useState(GiftRepo.getRecommendedGiftList())
-
+    const GiftsPromise = GiftRepo.getRecommendedGiftList();
     
-
-    
-  
   return (
-    <div>提案結果</div>
+    <div>
+      <div>提案結果</div><br />
+      <Items GiftsPromise = {GiftsPromise}/>
+
+
+    </div>
+
     
 
     
