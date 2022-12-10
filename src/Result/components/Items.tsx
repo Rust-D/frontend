@@ -16,7 +16,7 @@ export default function Items(props: GiftsPromiseProp) {
       
   });
 
-    return (<div>
+    return (<div className='gifts'>
       {gifts.map((gift) => <Item gift = {gift} />)}
     </div>);
 }

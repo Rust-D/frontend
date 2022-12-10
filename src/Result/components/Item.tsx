@@ -8,7 +8,7 @@ type ItemProp = {
 const Item = (props:ItemProp) => {
   return (
     <div>
-        <div>{props.gift.name}</div>
+        <div className = "seotext">{props.gift.name}</div>
     </div>
   )
 }

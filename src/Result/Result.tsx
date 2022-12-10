@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { GiftRepository } from '../data/GiftRepository'
 import Items from './components/Items'
+import { Link } from 'react-router-dom'
 
 function Result() {
 
@@ -11,9 +12,10 @@ function Result() {
     const GiftsPromise = GiftRepo.getRecommendedGiftList();
     
   return (
-    <div>
-      <div>提案結果</div><br />
+    <div id='result'>
+      <div id='title'>診断結果</div><br />
       <Items GiftsPromise = {GiftsPromise}/>
+
 
 
     </div>
