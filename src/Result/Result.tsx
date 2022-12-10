@@ -4,13 +4,23 @@ import Items from './components/Items'
 import { Link } from 'react-router-dom'
 import LoadingPage from '../LoadingPage/LoadingPage'
 import './Result.css'
+import { Condition } from '../data/Conditions'
+import { useLocation } from 'react-router-dom'
 
 function Result() {
 
   /* ここにコンディションのインスタンスを書く */
-    const [isShow, setIsShow] = useState(true);
-    const GiftRepo = new GiftRepository;
-    const GiftsPromise = GiftRepo.getRecommendedGiftList();
+  const location = useLocation<{condition: Condition}>();
+  const condition = new Condition( 
+    location.state.condition.maxPrice,
+    location.state.condition.minPrice,
+    location.state.condition.profile,
+    location.state.condition.giftCategory
+  );
+
+  const [isShow, setIsShow] = useState(true);
+  const GiftRepo = new GiftRepository;
+  const GiftsPromise = GiftRepo.getRecommendedGiftList(condition);
 
     
   return (
