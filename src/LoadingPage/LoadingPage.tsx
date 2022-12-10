@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import './LoadingPage.css'
 
-type ShowProps = {
+type IsShowProps = {
     isShow: boolean
 };
 
-export default function LoadingPage (LoadingState : ShowProps){
-  if(LoadingState.isShow) {
+export default function LoadingPage (props : IsShowProps){
+  if(props.isShow) {
     return (
       <div id='overlay'>
         <div className="loading">
