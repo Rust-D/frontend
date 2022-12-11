@@ -1,5 +1,5 @@
 import { Condition, GiftCategory} from '../data/Conditions'
-import { Profile, Sex, Relationship, Age } from '../data/Profile'
+import { Profile, Sex, Age } from '../data/Profile'
 import {useLocation} from 'react-router'
 
 interface Price{

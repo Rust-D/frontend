@@ -8,14 +8,6 @@ export const Sex = {
 
 export type Sex = typeof Sex[keyof typeof Sex]
 
-export const Relationship = {
-    FAMILY: 'family',
-    FRIEND: 'friend',
-    LOVER:  'lover',
-    OTHER:  'other',
-} as const
-
-export type Relationship = typeof Relationship[keyof typeof Relationship]
 
 export const Age = {
     AROUND_10: 'around_10',
@@ -30,14 +22,12 @@ export type Age = typeof Age[keyof typeof Age]
 
 export class Profile {
     sex: Sex;
-    relationship: Relationship;
     age: Age;
 
-    constructor(sex: Sex, relationship: Relationship, age: Age){
+    constructor(sex: Sex, age: Age){
         this.sex = sex;
-        this.relationship = Relationship.FAMILY;
         this.age = age;
     }
 }
 
-const profile = new Profile(Sex.MALE, Relationship.FAMILY, Age.AROUND_30)
+// const profile = new Profile(Sex.MALE, Relationship.FAMILY, Age.AROUND_30)

@@ -3,11 +3,13 @@ import Category from './components/Category'
 import Price from './components/Price'
 import ProfileInput from './components/Profile'
 import { Scrollbars } from 'rc-scrollbars'
-import { Condition, GiftCategory} from '../data/Conditions'
-import { Profile, Sex, Relationship, Age } from '../data/Profile'
+import { Condition, Season, GiftCategory} from '../data/Conditions'
+import { Profile, Sex, Age } from '../data/Profile'
 import Modal from 'react-modal'
 import '../App.css'
 import { useHistory } from 'react-router-dom'
+
+import Test from './requestTest'
 
 Modal.setAppElement("#root");
 
@@ -27,10 +29,10 @@ export default function PresentInput(){
     const [min, setMin] = useState<number>(-1)
     const [max, setMax] = useState<number>(-1)
     const [sex, setSex] = useState<Sex>(Sex.MALE)
-    const [rel, setRel] = useState<Relationship>(Relationship.FAMILY)
     const [age, setAge] = useState<Age>(Age.AROUND_10)
     const [cate, setCate] = useState<Array<GiftCategory>>(Array)
     const [modal, setModal] = useState(false)
+    const [season, setSeason] = useState<Season>(Season.SPRING)
     
     const history = useHistory()
 
@@ -38,13 +40,13 @@ export default function PresentInput(){
         console.log(min)
         console.log(max)
         console.log(sex)
-        console.log(rel)
+        console.log(season)
         console.log(age)
         console.log(cate) 
 
-        const Uprofile = new Profile(sex, rel, age)
+        const Uprofile = new Profile(sex, age)
         console.log(Uprofile)
-        const Uconditions = new Condition(min, max, Uprofile, cate)
+        const Uconditions = new Condition(min, max, Uprofile, season, cate)
         console.log(Uconditions)
 
         history.push("result" ,{condition: Uconditions}) //result画面にわたす、遷移もしてくれる
@@ -83,21 +85,7 @@ export default function PresentInput(){
                             <li className='Sex_input-inner'><ProfileInput name = "sex" value={Sex.OTHER} val = {sex} setVal={setSex}/></li>
                         </ul>
                     </div>
-                    <div className='Relationship'>
-                        <h4>関係性</h4>
-                        <ul>
-                            <li>家族</li>
-                            <li>友達</li>
-                            <li>恋人</li>
-                            <li>その他</li>
-                        </ul>
-                        <ul className='Rel_input'>
-                            <li className='Rel_input-inner'><ProfileInput name = "rel" value={Relationship.FAMILY} val = {rel} setVal={setRel} checked ={true}/></li>
-                            <li className='Rel_input-inner'><ProfileInput name = "rel" value={Relationship.FRIEND} val = {rel} setVal={setRel}/></li>
-                            <li className='Rel_input-inner'><ProfileInput name = "rel" value={Relationship.LOVER} val = {rel} setVal={setRel}/></li>
-                            <li className='Rel_input-inner'><ProfileInput name = "rel" value={Relationship.OTHER} val = {rel} setVal={setRel}/></li>
-                        </ul>
-                    </div>
+
                     <div className='Age'>
                         <h4>年齢</h4>
                         <ul>
@@ -120,6 +108,23 @@ export default function PresentInput(){
                 </div> 
                 {/* Profile終わり */}
 
+                <div className="Season">
+                    <h3>贈る季節</h3>
+                        <ul>
+                            <li>春</li>
+                            <li>夏</li>
+                            <li>秋</li>
+                            <li>冬</li>
+                        </ul>
+                        <ul className='Season_input'>
+                            <li className='Season_input-inner'><ProfileInput name = "season" value={Season.SPRING} val = {season} setVal={setSeason} checked ={true}/></li>
+                            <li className='Season_input-inner'><ProfileInput name = "season" value={Season.SUMMER} val = {season} setVal={setSeason}/></li>
+                            <li className='Season_input-inner'><ProfileInput name = "season" value={Season.AUTUMN} val = {season} setVal={setSeason}/></li>
+                            <li className='Season_input-inner'><ProfileInput name = "season" value={Season.WINTER} val = {season} setVal={setSeason}/></li>
+                        </ul>
+                </div>
+                {/* Season終わり */}
+
                 <div className='Category'>
                     <h3>贈り物のカテゴリー</h3>
                     <ul>
@@ -141,6 +146,9 @@ export default function PresentInput(){
                 {/* Category終わり */}
             </Scrollbars>
             <br/>
+
+            {/* <button type="button" onClick={() => (min === -1 || max === -1 || cate.length === 0) ? setModal(true) : Test()}>提案</button> */}
+
             <button type="button" onClick={() => (min === -1 || max === -1 || cate.length === 0) ? setModal(true) : inputCondition()}>提案</button>
             {/* 入力漏れがあったときのモーダル*/}
             <Modal isOpen={modal} style = {Modalstyle}>
