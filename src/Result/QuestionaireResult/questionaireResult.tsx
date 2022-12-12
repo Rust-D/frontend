@@ -1,23 +1,32 @@
 import Items from '../PresentResult/PresentComponents/PresentItems'
 import LoadingPage from '../../LoadingPage/LoadingPage'
 import './Result.css'
-import { condition, GiftsPromise } from '../PublicData/GetGiftPromise'
+import { condition, GiftRepo } from '../PublicData/GetGiftPromise'
 import { isShow ,setIsShow} from '../PublicData/OverlayState'
 import { PostUserRes } from '../PublicData/PostUserRes'
 import { UserRes } from '../../data/UserRes'
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import Item from './QuestionaireItem'
 
 import { Gift } from '../../data/Gift'
 import { ReRecommend, value1, value2, value3 } from '../PublicData/ReRecommend'
+import { resolve } from 'path'
+import { RedirectHome } from '../PublicData/History'
 function QResult() {
 
+  const [GiftsPromise, SetGiftsPromise] = useState<Promise<Gift[]>>(new Promise((resolve) => {resolve([])}))
   const [ur, setUr] = useState<UserRes>({UCondition: condition, URes:""});
   const [gifts, setGifts] = useState<Gift[]>([{name:""}, {name:""}, {name:""}, {name:""},{name:""}, {name:""}]);
   /*const [gifts, setGifts] = useState<Gift[]>([{name:""}, {name:""}, {name:""}, {name:""},{name:""}, {name:""}]);
   const [value1, setValue1] = useState<number>(0)
   const [value2, setValue2] = useState<number>(1)
   const [value3, setValue3] = useState<number>(2)*/
+
+  useEffect(() => {
+    SetGiftsPromise(GiftRepo.getRecommendedGiftList(condition))
+  }, [])
+  
   GiftsPromise.then((result) => {
       console.log("通信終了");
       setIsShow(false);  
@@ -33,6 +42,11 @@ function QResult() {
   const OnRadio = (gift : Gift) => {
     setUr({UCondition: ur.UCondition, URes: gift.name})
   }
+
+  const SendUserRes = () => {
+    PostUserRes(ur);
+    RedirectHome();
+  }
     
   return (
     <div id='result'>
@@ -46,7 +60,7 @@ function QResult() {
 
       <button onClick={ReRecommend}>再提案</button>
       
-      <button onClick={()  => {PostUserRes(ur)}}>送信</button>
+      <button onClick={SendUserRes} >送信</button>
     </div>
   )
 }

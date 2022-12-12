@@ -6,9 +6,7 @@ type ItemProp = {
     OnRadio: Function
 }
 
-const ClickRadio = () => {
-  
-} 
+
 const Item = (prop: ItemProp) => {
   const ClickRadio = () => {
     prop.OnRadio(prop.gift)
