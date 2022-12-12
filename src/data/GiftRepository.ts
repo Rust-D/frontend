@@ -31,7 +31,15 @@ export class GiftRepository{
         // } こんなんでリクエストとばす
         
 
-        const params = {method : "POST", body : JSON.stringify(request)} // json文字列でリクエストを送信
+        const params = {  
+            headers:{
+            'Accept': 'application/json, */*',
+            'Content-type':'application/json'    
+            },
+            method : "POST", 
+            body : JSON.stringify(request)
+        } 
+        
         const res = await fetch(url, params)
         console.log(res)
         const test1 = await res.json()

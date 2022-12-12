@@ -9,8 +9,6 @@ import Modal from 'react-modal'
 import '../App.css'
 import { useHistory } from 'react-router-dom'
 
-import Test from './requestTest'
-
 Modal.setAppElement("#root");
 
 export default function PresentInput(){
@@ -157,9 +155,6 @@ export default function PresentInput(){
             </Scrollbars>
             </div>
             <br/>
-
-            {/* <button type="button" onClick={() => (min === -1 || max === -1 || cate.length === 0) ? setModal(true) : Test()}>提案</button> */}
-
             <button type="button" onClick={() => (min === -1 || max === -1 || cate.length === 0) ? setModal(true) : inputCondition()}>提案</button>
             {/* 入力漏れがあったときのモーダル*/}
             <Modal isOpen={modal} style = {Modalstyle}>
