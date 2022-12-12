@@ -1,5 +1,5 @@
 import React from 'react'
-import { Gift } from '../../data/Gift'
+import { Gift } from '../../../data/Gift'
 
 type ItemProp = {
     gift : Gift

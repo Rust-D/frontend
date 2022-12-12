@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react'
-import { GiftRepository } from '../data/GiftRepository'
-import Items from './components/Items'
+import { GiftRepository } from '../../data/GiftRepository'
+import Items from '../PresentResult/PresentComponents/PresentItems'
 import { Link } from 'react-router-dom'
-import LoadingPage from '../LoadingPage/LoadingPage'
+import LoadingPage from '../../LoadingPage/LoadingPage'
 import './Result.css'
-import { Condition } from '../data/Conditions'
+import { Condition } from '../../data/Conditions'
 import { useLocation } from 'react-router-dom'
 
-function Result() {
+function QResult() {
 
   /* ここにコンディションのインスタンスを書く */
   const location = useLocation<{condition: Condition}>();
@@ -15,6 +15,7 @@ function Result() {
     location.state.condition.maxPrice,
     location.state.condition.minPrice,
     location.state.condition.profile,
+    location.state.condition.season,
     location.state.condition.giftCategory
   );
 
@@ -35,4 +36,4 @@ function Result() {
   )
 }
 
-export default Result
+export default QResult

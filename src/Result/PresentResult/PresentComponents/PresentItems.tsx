@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Gift } from '../../data/Gift';
-import Item from './Item';
+import { Gift } from '../../../data/Gift';
+import Item from './PresentItem';
 
 type ItemsProps = {
   GiftsPromise : Promise<Gift[]>
