@@ -1,28 +1,12 @@
-import React, { useRef, useState } from 'react'
-import { GiftRepository } from '../../data/GiftRepository'
 import Items from '../PresentResult/PresentComponents/PresentItems'
-import { Link } from 'react-router-dom'
 import LoadingPage from '../../LoadingPage/LoadingPage'
 import './Result.css'
-import { Condition } from '../../data/Conditions'
-import { useLocation } from 'react-router-dom'
+import { GiftsPromise } from '../PublicData/GetGiftPromise'
+import { isShow ,setIsShow} from '../PublicData/OverlayState'
 
 function QResult() {
 
-  /* ここにコンディションのインスタンスを書く */
-  const location = useLocation<{condition: Condition}>();
-  const condition = new Condition( 
-    location.state.condition.maxPrice,
-    location.state.condition.minPrice,
-    location.state.condition.profile,
-    location.state.condition.season,
-    location.state.condition.giftCategory
-  );
-
-  const [isShow, setIsShow] = useState(true);
-  const GiftRepo = new GiftRepository;
-  const GiftsPromise = GiftRepo.getRecommendedGiftList(condition);
-
+  
     
   return (
     <div id='result'>
