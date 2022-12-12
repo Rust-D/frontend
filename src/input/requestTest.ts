@@ -6,16 +6,16 @@ export default async function Test(){
     const res = await fetch(url, params)
     console.log(res)
     const test1 = await res.json()
-    console.log(test1)
+    console.log(test1) //object
 
-    const json = JSON.stringify(test1)
+    const json = JSON.stringify(test1) //json
 
     console.log(json)
 
-    const test3= JSON.stringify({id: "123", name : "しゅう"})
-    const test2 = JSON.parse(test3)
+    const test3= JSON.stringify({id: "123", name : "しゅう"}) 
+    const test2 = JSON.parse(test3) 
     const test4 = JSON.stringify(test2)
-    console.log(test3)
-    console.log(test2)
-    console.log(test4)
+    console.log(test3) // json
+    console.log(test2) // object
+    console.log(test4) // json
 }

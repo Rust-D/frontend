@@ -1,3 +1,4 @@
+import { ConditionalExpression } from "typescript";
 import { Condition } from "./Conditions";
 import { Gift } from "./Gift";
 
@@ -10,12 +11,38 @@ export class GiftRepository{
      async getRecommendedGiftList(conditions: Condition): Promise<Array<Gift>> {
 
         const url = "http://localhost:5000/test"
-        const params = {method : "POST", body : JSON.stringify({hage:"hoge"})}
+
+        const request = {
+            moneyMin: conditions.minPrice,
+            moneyMax: conditions.maxPrice,
+            age:      conditions.profile.age,
+            sex:      conditions.profile.sex,
+            season:   conditions.season,
+            topic:   conditions.giftCategory
+        }
+
+        // {
+        //     moneyMin: 1000,
+        //     moneyMax: 10000,
+        //     age:      'around_10',
+        //     sex:      'mare',
+        //     season:   'spring',
+        //     topic:    ['fashion', 'sports']
+        // } こんなんでリクエストとばす
+        
+
+        const params = {method : "POST", body : JSON.stringify(request)} // json文字列でリクエストを送信
         const res = await fetch(url, params)
         console.log(res)
-        const test1 = await res.json() //オブジェクトがかえってくる
-        console.log(test1)
+        const test1 = await res.json()
+        
+        // 　　　　↓こんなんかえってくる　（オブジェクトとして取得）
+        // {
+        //     recommends: [あいう、あいう、あいう]
+        // }
 
-        return (test1)
+        console.log(test1.recommends) //多分Array<Gift>
+
+        return (test1.recommennds)
     }
  }

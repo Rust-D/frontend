@@ -1,20 +1,20 @@
 import { Profile } from "./Profile";
 
 export const GiftCategory = {
-    FASHION: 'Fashion',
-    DAILY_NECESSITIES: 'DailyNecessities',
-    FOOD: 'Food',
-    SPORTS: 'Sports',
-    ENTERTAINMENT: 'Entertainment',
+    FASHION: 'fashion',
+    DAILY_NECESSITIES: 'dailyNecessities',
+    FOOD: 'food',
+    SPORTS: 'sports',
+    ENTERTAINMENT: 'entertainment',
 } as const
 
 export type GiftCategory = typeof GiftCategory[keyof typeof GiftCategory]
 
 export const Season = {
-    SPRING: 'Spring',
-    SUMMER: 'Summer',
-    AUTUMN: 'Autumn',
-    WINTER: 'Winter',
+    SPRING: 'spring',
+    SUMMER: 'summer',
+    AUTUMN: 'autumn',
+    WINTER: 'winter',
 } as const
 
 export type Season = typeof Season[keyof typeof Season]
