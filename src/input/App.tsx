@@ -52,8 +52,19 @@ export default function PresentInput(){
         history.push("result" ,{condition: Uconditions}) //result画面にわたす、遷移もしてくれる
     }
 
-    return(
+    return(       
         <div>
+           <div className='header_input'>
+            <div className='maintetle'>
+                P!ck UPresent
+            </div>
+            <div className='subtitle'>
+                -サプライズプレゼント提案ツール-
+            </div>
+            <br/>
+           </div>
+
+           <div className='input'>
             <h2>プレゼントを提案する</h2>
             <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={800}>
                 <div className = 'Price'>
@@ -72,7 +83,7 @@ export default function PresentInput(){
 
                 <div className = 'Profile'>
                     <div className='Sex'> 
-                        <h3>送る相手のプロフィール</h3>
+                        <h3>贈る相手のプロフィール</h3>
                         <h4>性別</h4>
                         <ul>
                             <li>男性</li>
@@ -131,8 +142,7 @@ export default function PresentInput(){
                         <li>ファッション</li>
                         <li>日用品</li>
                         <li>食べ物</li>
-                        <li>スポーツ</li><br/>
-                        <li>アウトドア</li>
+                        <li>スポーツ<br/>アウトドア</li>
                         <li>エンタメ</li>
                     </ul>
                     <ul className='Cat_input'>
@@ -145,6 +155,7 @@ export default function PresentInput(){
                 </div>
                 {/* Category終わり */}
             </Scrollbars>
+            </div>
             <br/>
 
             {/* <button type="button" onClick={() => (min === -1 || max === -1 || cate.length === 0) ? setModal(true) : Test()}>提案</button> */}
