@@ -8,4 +8,5 @@ export class UserRes  {
         this.UCondition = UCondition;
         this.URes = URes;
     }
+    
 };
