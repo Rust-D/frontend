@@ -91,7 +91,7 @@ export default function PresentInput(){
                             <li>その他</li>
                         </ul>
                         <ul className='Sex_input'>
-                            <li className='Sex_input-inner'><ProfileInput name = "sex" value={Sex.MALE} val = {sex} setVal={setSex} checked={true}/></li>
+                            <li className='Sex_input-inner'><ProfileInput name = "sex" value={Sex.MALE} val = {sex} setVal={setSex}/></li>
                             <li className='Sex_input-inner'><ProfileInput name = "sex" value={Sex.FEMALE} val = {sex} setVal={setSex}/></li>
                             <li className='Sex_input-inner'><ProfileInput name = "sex" value={Sex.OTHER} val = {sex} setVal={setSex}/></li>
                         </ul>
@@ -108,7 +108,7 @@ export default function PresentInput(){
                             <li>60代</li>
                         </ul>
                         <ul className='Age_input'>
-                            <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_10} val = {age} setVal={setAge} checked={true}/></li>
+                            <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_10} val = {age} setVal={setAge}/></li>
                             <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_20} val = {age} setVal={setAge}/></li>
                             <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_30} val = {age} setVal={setAge}/></li>
                             <li className='Age_input-inner'><ProfileInput name = "age" value={Age.AROUND_40} val = {age} setVal={setAge}/></li>
@@ -128,7 +128,7 @@ export default function PresentInput(){
                             <li>冬</li>
                         </ul>
                         <ul className='Season_input'>
-                            <li className='Season_input-inner'><ProfileInput name = "season" value={Season.SPRING} val = {season} setVal={setSeason} checked ={true}/></li>
+                            <li className='Season_input-inner'><ProfileInput name = "season" value={Season.SPRING} val = {season} setVal={setSeason}/></li>
                             <li className='Season_input-inner'><ProfileInput name = "season" value={Season.SUMMER} val = {season} setVal={setSeason}/></li>
                             <li className='Season_input-inner'><ProfileInput name = "season" value={Season.AUTUMN} val = {season} setVal={setSeason}/></li>
                             <li className='Season_input-inner'><ProfileInput name = "season" value={Season.WINTER} val = {season} setVal={setSeason}/></li>

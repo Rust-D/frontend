@@ -25,6 +25,25 @@ body {
     text-align: center;
 }
 
+.Scroll {
+    width: 200px;
+    height: 200px;
+    overflow: scroll;
+}
+.Scroll::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.Scroll::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: rgba(110, 108, 108, 0.2);
+}
+.Scroll::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #FF0000;
+}
+
+
 h2 {
     text-align: center;
     margin: 5;
