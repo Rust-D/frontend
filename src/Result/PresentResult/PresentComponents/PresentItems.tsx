@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Gift } from '../../data/Gift';
-import Item from './Item';
+import { Gift } from '../../../data/Gift';
+import Item from './PresentItem';
 
 type ItemsProps = {
   GiftsPromise : Promise<Gift[]>
@@ -10,7 +10,7 @@ type ItemsProps = {
 
 export default function Items(ItemsProps: ItemsProps) {
 
-  const [gifts, setGifts] = useState<Gift[]>([]);
+  const [gifts, setGifts] = useState<Gift[]>([{name:""}, {name:""}, {name:""}, {name:""},{name:""}, {name:""}]);
 
   ItemsProps.GiftsPromise.then((result) => {
       console.log("通信終了");
