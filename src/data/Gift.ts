@@ -1,6 +1,6 @@
 export class Gift{
-    name: String;
-    constructor(name: String) {
+    name: string;
+    constructor(name: string) {
         this.name = name;
     }
 }

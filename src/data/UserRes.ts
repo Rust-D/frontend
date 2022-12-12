@@ -2,9 +2,9 @@ import { Condition } from "./Conditions";
 
 export class UserRes  {
     UCondition : Condition;
-    URes : String;
+    URes : string;
 
-    constructor(UCondition: Condition, URes: String) {
+    constructor(UCondition: Condition, URes: string) {
         this.UCondition = UCondition;
         this.URes = URes;
     }
