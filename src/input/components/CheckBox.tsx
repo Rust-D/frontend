@@ -4,7 +4,7 @@ type RelationshipProps = {
     value : string //押したときにstateに入れたい名前
 
 }
-export default function Relationship(props: RelationshipProps){
+export default function CheckBox(props: RelationshipProps){
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
         // 押されたとき、ONなのかOFFなのかを判定する

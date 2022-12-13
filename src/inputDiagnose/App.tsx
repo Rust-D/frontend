@@ -1,6 +1,6 @@
-import CheckBox from './components/CheckBox'
-import Price from './components/Price'
-import Radio from './components/Radio'
+import CheckBox from '../input/components/CheckBox'
+import Radio from '../input/components/Radio'
+import Price from '../input/components/Price'
 
 import { Condition, Season, GiftCategory} from '../data/Conditions'
 import { Profile, Sex, Age } from '../data/Profile'
@@ -15,7 +15,7 @@ import React, { useState } from 'react'
 
 Modal.setAppElement("#root");
 
-export default function PresentInput(){
+export default function App(){
 
     const Modalstyle = {
         content : {
@@ -65,7 +65,7 @@ export default function PresentInput(){
            </div>
 
            <div className='input'>
-            <h2>プレゼントを提案する</h2>
+            <h2>プレゼントを診断する</h2>
             <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={600} style={style}>
                 <div className = 'Price'>
                     <h3>価格</h3>
@@ -83,7 +83,7 @@ export default function PresentInput(){
 
                 <div className = 'Profile'>
                     <div className='Sex'> 
-                        <h3>贈る相手のプロフィール</h3>
+                        <h3>プロフィール</h3>
                         <h4>性別</h4>
                         <ul>
                             <li>男性</li>
@@ -120,7 +120,7 @@ export default function PresentInput(){
                 {/* Profile終わり */}
 
                 <div className="Season">
-                    <h3>贈る季節</h3>
+                    <h3>季節</h3>
                         <ul>
                             <li>春</li>
                             <li>夏</li>

@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import presentInput from './input/App';
-// import questionnaireInput from './input_diagnosis/App'
+import questionnaireInput from './inputDiagnose/App';
+
 import HomeView from './home/HomeView';
 
 export default function App(){
@@ -12,7 +13,7 @@ export default function App(){
                     <Route exact path='/' component={HomeView} />
                     <Route path='/presents/input' component={presentInput} />
                     <Route path='/presents/result' /*component={presentsResult}*/ />
-                    <Route path='/questionnaire/input' /*component={questionnaireInput}*//>
+                    <Route path='/questionnaire/input' component={questionnaireInput}/>
                     <Route path='/questionnaire/result' /*component={questionnaireResult}*/ />
                 </Switch>
             </BrowserRouter>
