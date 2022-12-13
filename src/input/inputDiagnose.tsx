@@ -145,7 +145,7 @@ export default function App(){
                 {/* Season終わり */}
 
                 <div className='Category'>
-                    <h3>贈り物のカテゴリー</h3>
+                    <h3>カテゴリー</h3>
                     <ul>
                         <li>ファッション</li>
                         <li>日用品</li>
