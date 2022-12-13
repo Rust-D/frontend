@@ -24,7 +24,7 @@ function QResult() {
   const [value3, setValue3] = useState<number>(2)*/
 
   useEffect(() => {
-    SetGiftsPromise(GiftRepo.getRecommendedGiftList(condition))
+    SetGiftsPromise(GiftRepo.Test(condition))
   }, [])
   
   GiftsPromise.then((result) => {

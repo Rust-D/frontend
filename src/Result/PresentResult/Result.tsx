@@ -15,7 +15,7 @@ function Result() {
   const [gifts, setGifts] = useState<Gift[]>([{name:""}, {name:""}, {name:""}, {name:""},{name:""}, {name:""}]);
 
   useEffect(() => {
-    SetGiftsPromise(GiftRepo.getRecommendedGiftList(condition))
+    SetGiftsPromise(GiftRepo.Test(condition))
   }, [])
   
   GiftsPromise.then((result) => {
@@ -31,7 +31,7 @@ function Result() {
       <Item gift = {gifts[value1]} />
       <Item gift = {gifts[value2]} />
       <Item gift = {gifts[value3]} />
-      
+
       <button onClick={ReRecommend}>再提案</button>
     </div>
 
