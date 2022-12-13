@@ -45,10 +45,4 @@ export class GiftRepository{
 
         return (test1.recommennds)
     }
-
-    async Test(conditoin: Condition): Promise<Array<Gift>> {
-
-        console.log("condition:" , Condition)
-        return [{name:"yuha"}, {name: "nene"}, {name: "null"}, {name: "mario"}, {name: "nusajima"}, {name: "aisu"}]
-    }
  }
