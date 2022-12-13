@@ -1,52 +1,70 @@
-import Items from '../PresentResult/PresentComponents/PresentItems'
 import LoadingPage from '../../LoadingPage/LoadingPage'
-import './Result.css'
-import { condition, GiftRepo } from '../PublicData/GetGiftPromise'
-import { isShow ,setIsShow} from '../PublicData/OverlayState'
+import '../Result.css'
 import { PostUserRes } from '../PublicData/PostUserRes'
 import { UserRes } from '../../data/UserRes'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import Item from './QuestionaireItem'
-
+import { useHistory } from 'react-router-dom'
 import { Gift } from '../../data/Gift'
-import { ReRecommend, value1, value2, value3 } from '../PublicData/ReRecommend'
-import { resolve } from 'path'
-import { RedirectHome } from '../PublicData/History'
+import { Condition } from '../../data/Conditions'
+import { useLocation } from 'react-router-dom'
+import { GiftRepository } from '../../data/GiftRepository'
+import { condition } from '../../data/Sample'
+
 function QResult() {
 
-  const [GiftsPromise, SetGiftsPromise] = useState<Promise<Gift[]>>(new Promise((resolve) => {resolve([])}))
-  const [ur, setUr] = useState<UserRes>({UCondition: condition, URes:""});
-  const [gifts, setGifts] = useState<Gift[]>([{name:""}, {name:""}, {name:""}, {name:""},{name:""}, {name:""}]);
-  /*const [gifts, setGifts] = useState<Gift[]>([{name:""}, {name:""}, {name:""}, {name:""},{name:""}, {name:""}]);
+  const [gifts, setGifts] = useState<Gift[]>([{name:"null"}, {name:"yuha"}, {name:"nene"}, {name:"dwwwwkfkj"},{name:"kjf"}, {name:"kwdj"}]);
   const [value1, setValue1] = useState<number>(0)
   const [value2, setValue2] = useState<number>(1)
-  const [value3, setValue3] = useState<number>(2)*/
+  const [value3, setValue3] = useState<number>(2)
+  const [isShow, setIsShow] = useState<boolean>(false)
+  const history = useHistory();
+  const [ur, setUr] = useState<UserRes>({UCondition: condition, URes:""});
+  /*const location = useLocation<{condition: Condition}>();
+  const condition = new Condition( 
+  location.state.condition.maxPrice,
+  location.state.condition.minPrice,
+  location.state.condition.profile,
+  location.state.condition.season,
+  location.state.condition.giftCategory
+  );
+  const [ur, setUr] = useState<UserRes>({UCondition: condition, URes:""});
 
-  useEffect(() => {
-    SetGiftsPromise(GiftRepo.Test(condition))
-  }, [])
+  const GiftRepo = new GiftRepository;
+  const GiftsPromise =  GiftRepo.Test(condition)
+
+
   
   GiftsPromise.then((result) => {
       console.log("通信終了");
+      console.log(result)
       setIsShow(false);  
       setGifts(result); 
-  });
+  });*/
 
-  /*const ReRecommend = () => {
+  const ReRecommend = () => {
     setValue1(3)
     setValue2(4)
     setValue3(5)
-  }*/
+  }
+
+  const RedirectHome = () =>  {
+    history.push("/");
+}
 
   const OnRadio = (gift : Gift) => {
     setUr({UCondition: ur.UCondition, URes: gift.name})
   }
 
   const SendUserRes = () => {
+    console.log(ur)
     PostUserRes(ur);
+    
     RedirectHome();
   }
+
+  const giftss : Gift[] = [{name: "yuha"}, {name: "nene"}, {name: "null"}]
     
   return (
     <div id='result'>

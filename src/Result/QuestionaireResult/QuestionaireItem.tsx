@@ -13,7 +13,7 @@ const Item = (prop: ItemProp) => {
   } 
   return (
     <div>
-      <input type="radio" name="user_res" value={prop.gift.name} onClick = {ClickRadio} />{Gift.name}
+      <input type="radio" name="user_res" value={prop.gift.name} onClick = {ClickRadio} />{prop.gift.name}
     </div>
   )
 }

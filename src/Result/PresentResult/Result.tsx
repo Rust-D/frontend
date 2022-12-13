@@ -5,7 +5,7 @@ import { useState,useEffect } from 'react'
 import { Gift } from '../../data/Gift'
 import { GiftRepo, condition} from '../PublicData/GetGiftPromise'
 import { ReRecommend, value1, value2, value3 } from '../PublicData/ReRecommend'
-import './Result.css'
+import '../Result.css'
 
 
 

@@ -13,7 +13,7 @@ export default function App(){
                 <Switch>
                     <Route exact path='/' component={HomeView} />
                     <Route path='/presents/input' component={PresentInput} />
-                    <Route path='/presents/result' component={PResult}/>
+                    /<Route path='/presents/result' /*component={PResult}*//>
                     <Route path='/questionnaire/result' component={QResult} />
                 </Switch>
             </BrowserRouter>

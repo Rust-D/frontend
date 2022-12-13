@@ -49,7 +49,7 @@ export default function PresentInput(){
         const Uconditions = new Condition(min, max, Uprofile, season, cate)
         console.log(Uconditions)
 
-        history.push("result" ,{condition: Uconditions}) //result画面にわたす、遷移もしてくれる
+        history.push("../questionnaire/result" ,{condition: Uconditions}) //result画面にわたす、遷移もしてくれる
     }
 
     return(       
