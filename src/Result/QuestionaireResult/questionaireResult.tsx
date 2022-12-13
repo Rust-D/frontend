@@ -58,8 +58,9 @@ function QResult() {
   }
 
   const SendUserRes = () => {
+    const PUR = new PostUserRes()
     console.log(ur)
-    PostUserRes(ur);
+    PUR.postList(ur);
     
     RedirectHome();
   }
