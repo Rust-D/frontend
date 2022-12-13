@@ -54,6 +54,7 @@ export default function App(){
         const Gifts = GiftRepo.getRecommendedGiftList(Uconditions)
 
         Gifts.then((result) => {
+            console.log(result)
             const CG = new ConditionGifts(Uconditions, result)
             history.push("result" ,{conditionGifts: CG}) //result画面にわたす、遷移もしてくれる
         })

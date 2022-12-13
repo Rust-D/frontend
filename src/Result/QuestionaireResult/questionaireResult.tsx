@@ -21,6 +21,7 @@ function QResult() {
   const history = useHistory();
   const location = useLocation<{conditionGifts: ConditionGifts}>();
   const gifts = location.state.conditionGifts.Gifts;
+  console.log("JSON", JSON.stringify(gifts))
   const [ur, setUr] = useState<UserRes>({UCondition: location.state.conditionGifts.condition, URes:""});
   /*const location = useLocation<{condition: Condition}>();
   const condition = new Condition( 

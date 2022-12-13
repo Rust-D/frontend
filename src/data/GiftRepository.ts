@@ -33,7 +33,9 @@ export class GiftRepository{
 
         console.log(test1.recommends)  // 多分Array<Gift>
 
-        return (test1.recommennds)
+        const gifts: Gift[] = test1.recommends
+
+        return (gifts)
     }
 
     async Test(condition: Condition) : Promise<Array<Gift>> {
