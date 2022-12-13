@@ -9,7 +9,7 @@ export class Res{
     }
 }
 
-export class GiftRepository{
+export class PostUserRes{
 
      async postList(userRes: UserRes): Promise<Res> {
         const url = "http://localhost:5000/test"
