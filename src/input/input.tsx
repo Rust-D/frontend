@@ -11,6 +11,8 @@ import Modal from 'react-modal'
 import { useHistory } from 'react-router-dom'
 import { Scrollbars } from 'rc-scrollbars'
 import React, { useState } from 'react'
+import { GiftRepository } from '../data/GiftRepository'
+import { ConditionGifts } from '../data/ConditionGifts'
 
 
 Modal.setAppElement("#root");
@@ -45,11 +47,16 @@ export default function PresentInput(){
     const history = useHistory()
 
     function inputCondition(){
-
+        
         const Uprofile = new Profile(sex, age)
         const Uconditions = new Condition(min, max, Uprofile, season, cate)
+        const GiftRepo = new GiftRepository
+        const Gifts = GiftRepo.getRecommendedGiftList(Uconditions)
 
-        history.push("result" ,{condition: Uconditions}) //result画面にわたす、遷移もしてくれる
+        Gifts.then((result) => {
+            const CG = new ConditionGifts(Uconditions, result)
+            history.push("result" ,{conditionGifts: CG}) //result画面にわたす、遷移もしてくれる
+        })
     }
 
     return(       
