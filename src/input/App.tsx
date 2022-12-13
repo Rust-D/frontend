@@ -22,7 +22,13 @@ export default function PresentInput(){
           marginRight           : '-50%',
           transform             : 'translate(-50%, -50%)'
         }
-      };  
+    };  
+
+    const style = {
+        width: "100%",
+        margin: "0 auto",
+        marginTop: 50,
+    };
 
     const [min, setMin] = useState<number>(-1)
     const [max, setMax] = useState<number>(-1)
@@ -64,7 +70,7 @@ export default function PresentInput(){
 
            <div className='input'>
             <h2>プレゼントを提案する</h2>
-            <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={800}>
+            <Scrollbars autoHeight autoHeightMin={100} autoHeightMax={600} style={style}>
                 <div className = 'Price'>
                     <h3>価格</h3>
                     <ul className='Price_cont'>
