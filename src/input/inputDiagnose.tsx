@@ -1,6 +1,8 @@
 import CheckBox from './components/CheckBox'
 import Radio from './components/Radio'
 import Price from './components/Price'
+import { GiftRepository } from '../data/GiftRepository'
+import { ConditionGifts } from '../data/ConditionGifts'
 
 import { Condition, Season, GiftCategory} from '../data/Conditions'
 import { Profile, Sex, Age } from '../data/Profile'
@@ -48,8 +50,13 @@ export default function App(){
 
         const Uprofile = new Profile(sex, age)
         const Uconditions = new Condition(min, max, Uprofile, season, cate)
+        const GiftRepo = new GiftRepository
+        const Gifts = GiftRepo.getRecommendedGiftList(Uconditions)
 
-        history.push("result" ,{condition: Uconditions}) //result画面にわたす、遷移もしてくれる
+        Gifts.then((result) => {
+            const CG = new ConditionGifts(Uconditions, result)
+            history.push("result" ,{conditionGifts: CG}) //result画面にわたす、遷移もしてくれる
+        })
     }
 
     return(       
