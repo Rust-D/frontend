@@ -11,16 +11,17 @@ import { Condition } from '../../data/Conditions'
 import { useLocation } from 'react-router-dom'
 import { GiftRepository } from '../../data/GiftRepository'
 import { condition } from '../../data/Sample'
+import { ConditionGifts } from '../../data/ConditionGifts'
 
 function QResult() {
 
-  const [gifts, setGifts] = useState<Gift[]>([{name:"null"}, {name:"yuha"}, {name:"nene"}, {name:"dwwwwkfkj"},{name:"kjf"}, {name:"kwdj"}]);
   const [value1, setValue1] = useState<number>(0)
   const [value2, setValue2] = useState<number>(1)
   const [value3, setValue3] = useState<number>(2)
-  const [isShow, setIsShow] = useState<boolean>(false)
   const history = useHistory();
-  const [ur, setUr] = useState<UserRes>({UCondition: condition, URes:""});
+  const location = useLocation<{conditionGifts: ConditionGifts}>();
+  const gifts = location.state.conditionGifts.Gifts;
+  const [ur, setUr] = useState<UserRes>({UCondition: location.state.conditionGifts.condition, URes:""});
   /*const location = useLocation<{condition: Condition}>();
   const condition = new Condition( 
   location.state.condition.maxPrice,
@@ -64,12 +65,9 @@ function QResult() {
     
     RedirectHome();
   }
-
-  const giftss : Gift[] = [{name: "yuha"}, {name: "nene"}, {name: "null"}]
     
   return (
     <div id='result'>
-      <LoadingPage isShow = {isShow}/>
       <div id='title'>診断結果</div><br/>
       {/*gifts.map((gift) => <Item gift={gift} OnRadio={() => {setUr({UCondition: ur.UCondition, URes: gift.name})}}/>)*/}
 
