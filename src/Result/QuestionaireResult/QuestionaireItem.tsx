@@ -1,5 +1,4 @@
 import React from 'react'
-import { isTemplateMiddleOrTemplateTail } from 'typescript'
 import { Gift } from '../../data/Gift'
 type ItemProp = {
     gift: Gift
