@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import presentInput from './input/App';
-import questionnaireInput from './inputDiagnose/App';
+import presentInput from './input/input';
+import questionnaireInput from './input/inputDiagnose';
 
 import HomeView from './home/HomeView';
 

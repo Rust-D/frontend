@@ -1,6 +1,6 @@
-import CheckBox from '../input/components/CheckBox'
-import Radio from '../input/components/Radio'
-import Price from '../input/components/Price'
+import CheckBox from './components/CheckBox'
+import Radio from './components/Radio'
+import Price from './components/Price'
 
 import { Condition, Season, GiftCategory} from '../data/Conditions'
 import { Profile, Sex, Age } from '../data/Profile'
