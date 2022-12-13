@@ -6,16 +6,14 @@ type ItemProp = {
     OnRadio: Function
 }
 
-const ClickRadio = () => {
-  
-} 
+
 const Item = (prop: ItemProp) => {
   const ClickRadio = () => {
     prop.OnRadio(prop.gift)
   } 
   return (
     <div>
-      <input type="radio" name="user_res" value={prop.gift.name} onClick = {ClickRadio} />{Gift.name}
+      <input type="radio" name="user_res" value={prop.gift.name} onClick = {ClickRadio} />{prop.gift.name}
     </div>
   )
 }

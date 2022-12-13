@@ -12,4 +12,4 @@ export const condition = new Condition(
 );
 
 export const GiftRepo = new GiftRepository;
-export const GiftsPromise = GiftRepo.getRecommendedGiftList(condition);
+
