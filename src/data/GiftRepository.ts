@@ -8,7 +8,7 @@ export class GiftRepository{
      * @returns Array<Gift> - 提案されたGiftのリスト
      */
     async getRecommendedGiftList(conditions: Condition): Promise<Array<Gift>> {
-        const url = "http://localhost:5000/test"
+        const url = "http://localhost:5000/recommend"
 
         const request = {
             moneyMin: conditions.minPrice,
@@ -31,6 +31,7 @@ export class GiftRepository{
         const res = await fetch(url, params)
         const test1 = await res.json()
 
+        console.log(test1)
         console.log(test1.recommends)  // 多分Array<Gift>
 
         const gifts: Gift[] = test1.recommends

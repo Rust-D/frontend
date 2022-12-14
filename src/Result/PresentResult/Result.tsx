@@ -1,31 +1,36 @@
-import Item from './PresentComponents/PresentItem'
-import LoadingPage from '../../LoadingPage/LoadingPage'
-import { isShow, setIsShow } from '../PublicData/OverlayState'
-import { useState,useEffect } from 'react'
-import { Gift } from '../../data/Gift'
-import { GiftRepo, condition} from '../PublicData/GetGiftPromise'
-import { ReRecommend, value1, value2, value3 } from '../PublicData/ReRecommend'
 import '../Result.css'
+import { useState } from 'react'
+import Item from './PresentComponents/PresentItem'
+import { useHistory } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { ConditionGifts } from '../../data/ConditionGifts'
 
 
 
 
 function Result() {
-  const [GiftsPromise, SetGiftsPromise] = useState<Promise<Gift[]>>(new Promise((resolve) => {resolve([])}))
-  const [gifts, setGifts] = useState<Gift[]>([{name:""}, {name:""}, {name:""}, {name:""},{name:""}, {name:""}]);
+  const [value1, setValue1] = useState<number>(0)
+  const [value2, setValue2] = useState<number>(1)
+  const [value3, setValue3] = useState<number>(2)
+  const history = useHistory();
+  const location = useLocation<{conditionGifts: ConditionGifts}>();
+  const gifts = location.state.conditionGifts.Gifts;
+  console.log("JSON", JSON.stringify(gifts))
 
-  useEffect(() => {
-    SetGiftsPromise(GiftRepo.Test(condition))
-  }, [])
-  
-  GiftsPromise.then((result) => {
-      console.log("通信終了");
-      setIsShow(false);  
-      setGifts(result); 
-  });
+  const ReRecommend = () => {
+    setValue1(3)
+    setValue2(4)
+    setValue3(5)
+  }
+
+  const RedirectHome = () =>  {
+    history.push("/");
+}
+
+
+
   return (
     <div id='result'>
-      <LoadingPage isShow = {isShow}/>
       <div id='title'>提案結果</div><br/>
 
       <Item gift = {gifts[value1]} />
@@ -33,9 +38,8 @@ function Result() {
       <Item gift = {gifts[value3]} />
 
       <button onClick={ReRecommend}>再提案</button>
+      <button onClick={RedirectHome}>Home</button>
     </div>
-
-    
   )
 }
 
