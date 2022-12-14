@@ -1,13 +1,14 @@
 @charset "utf-8";
 
 body {
+    margin: 0;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
 }
 
 .header_input {
-    background-color: #d9d9d9;
+    background-color: #CFAAFF;
     font-size: 70px;
     position: relative;
     width: 100%;
@@ -25,46 +26,27 @@ body {
     text-align: center;
 }
 
-.Scroll {
-    width: 200px;
-    height: 200px;
-    overflow: scroll;
-}
-.Scroll::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-.Scroll::-webkit-scrollbar-track {
-    border-radius: 5px;
-    background: rgba(110, 108, 108, 0.2);
-}
-.Scroll::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background: #FF0000;
-}
-
-
 h2 {
     text-align: center;
     margin: 5;
 }
 
 h3 {
-    background-color: #d9d9d9;
+    background-color: #CFAAFF;
     margin: 3;
 }
 
 h4 {
-    background-color: #f0f0f0;
+    background-color: #F7F0FF;
     font-size: 15px;
 }
 
 .Profile {
-    background-color: #f0f0f0;
+    background-color: #F7F0FF;
 }
 
 .Price , .Sex , .Age , .Season , .Category{
-    background-color: #f0f0f0;
+    background-color: #F7F0FF;
     margin-top: 0;
     margin-bottom: 0;
     text-align: center;
@@ -91,30 +73,40 @@ li {
 
 .Sex_input-inner {
     list-style: none;
-    margin-left: 40px;
+    margin-left: 35px;
     margin-right: 60px;
 }
 
 .Age_input-inner {
     list-style: none;
-    margin-left: 40px;
-    margin-right: 55px;
+    margin-left: 38px;
+    margin-right: 57px;
 }
 
 .Season_input-inner {
     list-style: none;
-    margin-left: 30px;
-    margin-right: 50px;
+    margin-left: 26.8px;
+    margin-right: 49px;
+}
+
+.Cate_input-inner {
+    list-style: none;
+    margin-left: 32px;
+    margin-right: 47px;
 }
 
 .Cat-_input-inner {
     list-style: none;
-    margin-left: 50px;
-    margin-right: 70px;
+    margin-left: 55px;
+    margin-right: 65px;
 }
 
+
 button {
+    background-color: #DBBFFF;
     width: 5em;
     height: 2em;
     font-size: 20px;
+    border: 0;
+    border-radius: 60px;
 }
