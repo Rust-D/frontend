@@ -69,16 +69,18 @@ function QResult() {
     
   return (
     <div id='result'>
-      <div id='title'>診断結果</div><br/>
+      <div className='header_input'></div>
+      <div className='title'>診断結果</div>
+      
       {/*gifts.map((gift) => <Item gift={gift} OnRadio={() => {setUr({UCondition: ur.UCondition, URes: gift.name})}}/>)*/}
 
-      <Item gift = {gifts[value1]} OnRadio = {OnRadio}/>
-      <Item gift = {gifts[value2]} OnRadio = {OnRadio}/>
-      <Item gift = {gifts[value3]} OnRadio = {OnRadio}/>
+      <Item gift = {gifts[value1]} OnRadio = {OnRadio} number = "1"/>
+      <Item gift = {gifts[value2]} OnRadio = {OnRadio} number = "2"/>
+      <Item gift = {gifts[value3]} OnRadio = {OnRadio} number = "3"/>
 
-      <button onClick={ReRecommend}>再提案</button>
-      
-      <button onClick={SendUserRes} >送信</button>
+      <button className='Rep' onClick={ReRecommend}>再診断</button>
+
+      <button className='Post' onClick={SendUserRes} >送信</button>
     </div>
   )
 }

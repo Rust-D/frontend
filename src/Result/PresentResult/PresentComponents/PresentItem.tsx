@@ -7,7 +7,7 @@ type ItemProp = {
 
 const Item = (props:ItemProp) => {
   return (
-    <div>
+    <div className='choice underline'>
         <div className = "seotext">{props.gift.name}</div>
     </div>
   )
