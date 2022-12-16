@@ -165,7 +165,7 @@ export default function App(){
             </Scrollbars>
             </div>
             <br/>
-            <button type="button" onClick={() => (min === -1 || max === -1 || cate.length === 0) ? setModal(true) : inputCondition()}>提案</button>
+            <button type="button" onClick={() => (min === -1 || max === -1 || cate.length === 0) ? setModal(true) : inputCondition()}>完了</button>
             {/* 入力漏れがあったときのモーダル*/}
             <Modal isOpen={modal} style = {Modalstyle}>
                 <button onClick={() => setModal(false)}>close</button>
