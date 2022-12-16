@@ -2,6 +2,62 @@
     font-size: 50px;
 }
 
-#title {
-    font-size: 70px;
+.title {
+    font-size: 35px;
+}
+
+#result .Rep {
+    width: 15%;
+    margin-top: 10%;
+    margin-left: 25%;
+}
+
+#result .Post {
+    width: 12.5%;
+    margin-left: 12%;
+}
+
+.choice {
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.underline {
+    border-bottom: solid 3px;
+    width: 50%;
+    text-align: center;
+    padding-bottom: 1px;
+    border-bottom-color: #DBBFFF;
+}
+
+.radiobutton {
+    display: none;
+}
+
+label {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #000;
+    user-select: none;
+    cursor: pointer;
+    background: #fff;
+}
+
+label:hover {
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+    background: #777;
+}
+
+input:checked + label {
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
 }

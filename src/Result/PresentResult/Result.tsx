@@ -31,14 +31,16 @@ function Result() {
 
   return (
     <div id='result'>
-      <div id='title'>提案結果</div><br/>
+      <div className='header_input'></div>
+      <div className='title'>提案結果</div>
 
       <Item gift = {gifts[value1]} />
       <Item gift = {gifts[value2]} />
       <Item gift = {gifts[value3]} />
 
-      <button onClick={ReRecommend}>再提案</button>
-      <button onClick={RedirectHome}>Home</button>
+      <button className='Rep' onClick={ReRecommend}>再提案</button>
+      
+      <button className='Post' onClick={RedirectHome}>Home</button>
     </div>
   )
 }
