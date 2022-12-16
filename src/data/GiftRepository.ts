@@ -41,6 +41,6 @@ export class GiftRepository{
 
     async Test(condition: Condition) : Promise<Array<Gift>> {
         console.log("condition:", condition)
-        return [{name: "yuha"}, {name: "kjsdkj"}, {name: "kjsdkjsd"}, {name: "hoge"}, {name: "huga"}, {name: "piyo"}]
+        return [{name: "うどん"}, {name: "ネクタイ"}, {name: "春巻き"}, {name: "シャンプー"}, {name: "わらび餅"}, {name: "香水"}]
     }
 }
